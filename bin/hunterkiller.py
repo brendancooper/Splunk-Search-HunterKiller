@@ -2,10 +2,9 @@ import requests
 import json
 import datetime
 import urllib3
-
+import sys
 # Supress Cert warning for local Splunk REST calls
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
 
 def manage(payload, row):
     configuration = payload['configuration']
