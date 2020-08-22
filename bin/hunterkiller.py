@@ -21,7 +21,7 @@ def manage(payload, row):
     else:
         return
 
-    if len(row[sid]) > 13 and  action in ["pause", "unpause", "finalize", "cancel", "touch", "setttl", "setpriority", "enablepreview", "disablepreview", "setworkloadpool","save","unsave"]:
+    if len(row['sid']) > 13 and  action in ["pause", "unpause", "finalize", "cancel", "touch", "setttl", "setpriority", "enablepreview", "disablepreview", "setworkloadpool","save","unsave"]:
         body = {}
         if action in ["setttl","setpriority","setworkloadpool"]:
             if action == "setttl":
