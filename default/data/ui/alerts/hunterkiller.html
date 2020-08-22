@@ -1,22 +1,22 @@
 <form class="form-horizontal form-complex">
     <div class="control-group">
         <label class="control-label" for="action">Action</label>
-        <div class="controls">            
+        <div class="controls">
             <select id="action" placeholder="finalize" required name="action.hunterkiller.param.action">
                 <option value="finalize ">finalize </option>
                 <option value="pause">pause </option>
                 <option value="setworkloadpool">cancel </option>
                 <option value="setpriority">setpriority</option>
-                <option value="unpause ">unpause </option>                
+                <option value="unpause ">unpause </option>
                 <option value="cancel">cancel</option>
                 <option value="touch">touch</option>
-                <option value="setttl">setttl</option>                
+                <option value="setttl">setttl</option>
                 <option value="enablepreview">enablepreview</option>
-                <option value="disablepreview">disablepreview</option>                
+                <option value="disablepreview">disablepreview</option>
             </select>
             Select the action you want to take on search.
         </div>
-        <label class="control-label" for="argument">Flock</label>
+        <label class="control-label" for="argument">Command Argument</label>
         <div class="controls">
             <input type="text" name="action.hunterkiller.param.argument" id="argument" />
             <span class="help-block">Command Argument - Used for setpriority, setttl and setpriority commands</span>

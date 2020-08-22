@@ -23,7 +23,7 @@ def manage(payload, row):
     else:
         return
 
-    if action in ["pause", "unpause", "finalize", "cancel", "touch", "setttl", "setpriority", "enablepreview", "disablepreview", "setworkloadpool","save","unsave"]:
+    if len(row[sid]) > 13 and  action in ["pause", "unpause", "finalize", "cancel", "touch", "setttl", "setpriority", "enablepreview", "disablepreview", "setworkloadpool","save","unsave"]:
         body = {}
         if action in ["setttl","setpriority","setworkloadpool"]:
             if action == "setttl":
@@ -33,7 +33,7 @@ def manage(payload, row):
             elif action == "setworkloadpool":
                 body['workload_pool'] = argument
         body['action'] = action
-        res = requests.post("{}/services/search/jobs/{}/control".format(payload['server_uri'], payload['sid'] ), headers=headers, data=body, verify=False)
+        res = requests.post("{}/services/search/jobs/{}/control".format(payload['server_uri'], row['sid'] ), headers=headers, data=body, verify=False)
     else:
         return
 
@@ -42,4 +42,4 @@ if len(sys.argv) > 1 and sys.argv[1] == "--execute":
     configuration = payload['configuration']
     results = payload['result']
     for row in results:
-        manage(row)
+        manage(payload, row)
