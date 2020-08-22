@@ -6,7 +6,6 @@ import urllib3
 # Supress Cert warning for local Splunk REST calls
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-def validate_action()
 
 def manage(payload, row):
     configuration = payload['configuration']
