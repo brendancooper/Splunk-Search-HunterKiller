@@ -14,10 +14,10 @@ def manage(payload, row):
     headers['Authorization'] = "Bearer {}".format(payload['session_key'])
     if "action" in row and len(row['action']) > 0:
         action = row['action']
-        argument = row['argument']
+        argument = row.get('argument')
     elif "action" in configuration:
         action = configuration['action']
-        argument = configuration['argument']
+        argument = configuration.get('argument')
     else:
         return
 
